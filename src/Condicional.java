@@ -4,7 +4,7 @@ public class Condicional {
     public static void main(String[] args) {
         char sexo = 'M';
         String nome = "Ricardo";
-        double nota1 = 10;
+        double nota1 = 2;
         double nota2 = 10;
         double nota3 = 4;
         double nota4 = 4;
