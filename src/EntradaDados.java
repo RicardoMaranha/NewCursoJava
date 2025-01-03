@@ -10,11 +10,15 @@ public class EntradaDados {
         int divCarro = (int) (carroNumero / pessoasNumero);
         int restoCarro = (int) (carroNumero % pessoasNumero);
 
-        JOptionPane.showMessageDialog(null,"Divisão de carrros para pessoas foram " + divCarro + " para cada pessoa, e sobrou  " + restoCarro + " carros." );
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja ver a divisão?");
+        System.out.println(resposta);
 
-
-
-
-
+        if (resposta == 0) {
+            JOptionPane.showMessageDialog(null, "Divisão de carrros para pessoas foram " + divCarro + " para cada pessoa, e sobrou  " + restoCarro + " carros.");
+        } else if (resposta == 1) {
+            JOptionPane.showMessageDialog(null, "Programa encerrado!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Programa cancelado!");
+        }
     }
 }
