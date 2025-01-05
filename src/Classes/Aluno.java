@@ -134,13 +134,13 @@ public class Aluno {
                 return ((nota1 + nota2 + nota3 + nota4) / 4);
         }
 
-        public String getAprovado() {
+        public int getAlunoAprovado() {
                 if(getMediaNota() >= 7){
-                        return "Aprovado";
+                        return 0; /*Aprovado*/
                 } else if (getMediaNota() < 7 && getMediaNota() >= 4) {
-                        return "Recuperação";
+                        return 1; /*Recuperação*/
                 } else {
-                        return "Reprovado";
+                        return 2; /*Reprovado*/
                 }
         }
 }
