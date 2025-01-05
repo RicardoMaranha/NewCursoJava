@@ -1,3 +1,5 @@
+package AulasIniciais;
+
 import javax.swing.*;
 
 public class EntradaDados {

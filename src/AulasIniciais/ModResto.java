@@ -1,3 +1,5 @@
+package AulasIniciais;
+
 public class ModResto {
     public static void main(String[] args) {
         double carro = 13;

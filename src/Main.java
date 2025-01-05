@@ -1,30 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Classes.Aluno;
+
+
 public class Main {
+    /*Variável Global*/
     static int idadeGlobal = 18;
 
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+        /*Instaciar o aluno - Criar objeto na memoria do Java*/
+        Aluno aluno1 = new Aluno();
+        aluno1.setNome("Ricardo");
+        aluno1.setIdade(34);
+        aluno1.setDataNascimento("12/12/1990");
+        aluno1.setNota1(2);
+        aluno1.setNota2(10);
+        aluno1.setNota3(8);
+        aluno1.setNota4(7);
 
-        int maiorIdade = 18;
-        int idosoIdade = 60;
-        int crianca = 6;
+        System.out.println("O nome é :" + aluno1.getNome());
+        System.out.println(aluno1.getIdade() + " anos ");
+        System.out.println("Data de nascimento: " + aluno1.getDataNascimento());
+        System.out.println(aluno1.getMediaNota());
 
-        System.out.println("Maior idade: " + maiorIdade);
-        System.out.println("Criança idade: " + crianca);
-        System.out.println("Idoso idade: " + idosoIdade);
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-        metodo2();
-    }
-
-    public static void metodo2() {
-        System.out.println("Idade Global: " + idadeGlobal);
     }
 }

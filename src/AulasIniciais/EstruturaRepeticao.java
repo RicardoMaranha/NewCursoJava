@@ -1,3 +1,5 @@
+package AulasIniciais;
+
 public class EstruturaRepeticao {
     public static void main(String[] args) {
         /*While e Do While*/
