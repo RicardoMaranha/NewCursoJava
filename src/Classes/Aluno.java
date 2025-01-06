@@ -1,5 +1,9 @@
 package Classes;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 /* Classe para representar aluno */
 public class Aluno {
 
@@ -13,10 +17,8 @@ public class Aluno {
         private String dataMatricula;
         private String nomeEscola;
         private String serieMatriculado;
-        private double nota1;
-        private double nota2;
-        private double nota3;
-        private double nota4;
+
+        private List<Disciplina> disciplinasAluno = new ArrayList<Disciplina>();
 
         public String getNome() {
                 return nome;
@@ -98,40 +100,23 @@ public class Aluno {
                 this.serieMatriculado = serieMatriculado;
         }
 
-        public double getNota1() {
-                return nota1;
+        public List<Disciplina> getDisciplinasAluno() {
+                return disciplinasAluno;
         }
 
-        public void setNota1(double nota1) {
-                this.nota1 = nota1;
-        }
-
-        public double getNota2() {
-                return nota2;
-        }
-
-        public void setNota2(double nota2) {
-                this.nota2 = nota2;
-        }
-
-        public double getNota3() {
-                return nota3;
-        }
-
-        public void setNota3(double nota3) {
-                this.nota3 = nota3;
-        }
-
-        public double getNota4() {
-                return nota4;
-        }
-
-        public void setNota4(double nota4) {
-                this.nota4 = nota4;
+        public void setDisciplinasAluno(List<Disciplina> disciplinasAluno) {
+                this.disciplinasAluno = disciplinasAluno;
         }
 
         public double getMediaNota() {
-                return ((nota1 + nota2 + nota3 + nota4) / 4);
+
+                double media = 0.0;
+
+                for (Disciplina disciplina : disciplinasAluno){
+                        media = (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+                }
+
+                return  media ;
         }
 
         public int getAlunoAprovado() {
@@ -142,5 +127,44 @@ public class Aluno {
                 } else {
                         return 2; /*Reprovado*/
                 }
+        }
+
+        public  String getDisciplinaMedia(){
+                String nomeDisciplina = "";
+                String media = "";
+                for (Disciplina disciplina : disciplinasAluno){
+                        nomeDisciplina = disciplina.getDisciplina();
+                }
+                return nomeDisciplina;
+        }
+
+
+        @Override
+        public String toString() {
+                return "Aluno{" +
+                        "nome='" + nome + '\'' +
+                        ", idade=" + idade +
+                        ", dataNascimento='" + dataNascimento + '\'' +
+                        ", registroGeral='" + registroGeral + '\'' +
+                        ", numeroCpf='" + numeroCpf + '\'' +
+                        ", nomeMae='" + nomeMae + '\'' +
+                        ", nomePai='" + nomePai + '\'' +
+                        ", dataMatricula='" + dataMatricula + '\'' +
+                        ", nomeEscola='" + nomeEscola + '\'' +
+                        ", serieMatriculado='" + serieMatriculado + '\'' +
+                        ", disciplinasAluno=" + disciplinasAluno +
+                        '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+                if (o == null || getClass() != o.getClass()) return false;
+                Aluno aluno = (Aluno) o;
+                return Objects.equals(numeroCpf, aluno.numeroCpf);
+        }
+
+        @Override
+        public int hashCode() {
+                return Objects.hashCode(numeroCpf);
         }
 }
