@@ -10,6 +10,7 @@ public class Disciplina {
     double nota3;
     double nota4;
 
+
     public String getDisciplina() {
         return disciplina;
     }
@@ -50,16 +51,19 @@ public class Disciplina {
         this.nota4 = nota4;
     }
 
-    @Override
-    public String toString() {
-        return "Disciplina{" +
-                "Disciplina='" + disciplina + '\'' +
-                ", nota1=" + nota1 +
-                ", nota2=" + nota2 +
-                ", nota3=" + nota3 +
-                ", nota4=" + nota4 +
-                '}';
+    public double getMedia() {
+        return (nota1 + nota2 + nota3 + nota4) / 4;
     }
 
 
+    @Override
+    public String toString() {
+        return "Disciplina{" +
+                ", nota4=" + nota4 +
+                ", nota3=" + nota3 +
+                ", nota2=" + nota2 +
+                ", nota1=" + nota1 +
+                ", disciplina='" + disciplina + '\'' +
+                '}';
+    }
 }
