@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
     /*Variável Global*/
     static int idadeGlobal = 18;
-
+    /*teste comentario e git push config*/
     public static void main(String[] args) {
         /*Instaciar o aluno - Criar objeto na memoria do Java*/
 
